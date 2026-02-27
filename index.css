@@ -1,0 +1,83 @@
+body{
+background-color: skyblue;
+}
+
+
+.keyboard{
+display: flex;
+flex-direction: row;
+justify-content: center;
+text-align: center;
+
+
+}
+#shiftbox{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+text-align: center;
+}
+
+#alarm{
+font-size: 20px;
+font-family:'sans-serif';
+}
+
+
+#output{
+background-color: lightgray;
+height:500px;
+width: 1000px;
+border: 3px solid black;
+font-size: 45px;
+margin: 0px auto 20px;
+
+}
+
+#input{
+background-color: lightgray;
+height: 100px;
+width: 600px;
+border: 3px solid black;
+font-size: 45px;
+margin: 0px auto 20px;
+}
+
+#sub{
+margin: 0px auto 20px;
+}
+
+
+.barbuttons{
+    background-color: lightsteelblue;
+width: 400px;
+border: 3px solid black;
+display: flex;
+margin: 20px;
+justify-content: center;
+flex-direction: column;
+align-content: center;
+font-size: 45px;
+text-align: center;
+}
+.keys{
+    background-color: lightgoldenrodyellow;
+border: 3px solid black;
+display: flex;
+justify-content: center;
+width: 75px;
+height: 75px;
+margin: 10px;
+flex-direction: column;
+align-content: center;
+font-size: 45px;
+
+
+}
+
+.keys:hover, .barbuttons:hover{
+background-color: yellowgreen;
+
+}
+
