@@ -1,12 +1,13 @@
 let keyshift = document.getElementById("shift")
 
 function validate(){
-    let shift = Number(keyshift.value)
+  alarmbox = document.getElementById("alarm")
+  alarmbox.textContent = ""  
+  let shift = Number(keyshift.value)
     if (shift === 0|| shift > 0){
       return shift
     }
     else{
-      alarmbox = document.getElementById("alarm")
       alarmbox.textContent = "Please enter a number above 0"
       keyshift.value = '0'
     }
@@ -52,8 +53,6 @@ function decode(encode_string, key){
     else{
       unceaser += " "
     }
-  
-  
   
     return unceaser
   }
