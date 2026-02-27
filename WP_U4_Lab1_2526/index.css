@@ -11,6 +11,12 @@ text-align: center;
 
 
 }
+#shiftbox{
+display: flex;
+flex-direction: row;
+justify-content: center;
+text-align: center;
+}
 #shift{
 display: flex;
 flex-direction: row;
