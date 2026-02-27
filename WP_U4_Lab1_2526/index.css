@@ -1,4 +1,4 @@
-.body{
+body{
 background-color: skyblue;
 }
 
@@ -15,16 +15,18 @@ text-align: center;
 display: flex;
 flex-direction: row;
 justify-content: center;
-text-align: center;
-}
-#shift{
-display: flex;
-flex-direction: row;
-justify-content: center;
+align-content: center;
 text-align: center;
 }
 
+#alarm{
+font-size: 20px;
+font-family:'sans-serif';
+}
+
+
 #output{
+background-color: lightgray;
 height:500px;
 width: 1000px;
 border: 3px solid black;
@@ -34,6 +36,7 @@ margin: 0px auto 20px;
 }
 
 #input{
+background-color: lightgray;
 height: 100px;
 width: 600px;
 border: 3px solid black;
@@ -47,6 +50,7 @@ margin: 0px auto 20px;
 
 
 .barbuttons{
+    background-color: lightsteelblue;
 width: 400px;
 border: 3px solid black;
 display: flex;
@@ -58,6 +62,7 @@ font-size: 45px;
 text-align: center;
 }
 .keys{
+    background-color: lightgoldenrodyellow;
 border: 3px solid black;
 display: flex;
 justify-content: center;
