@@ -1,17 +1,16 @@
-function validate(key){
-  let key_validated = False
-  while(key_validated === True){
-    try{
-      key = int(key)
-      key_validated = True
-      return key
-    }
-    catch{
-      print("Your key must be a number. Try again.\n")
-      key = input("What is your desired key shift? ")
+let keyshift = document.getElementById("shift")
+
+function validate(){
+  if (typeof(keyshift.value) !== number){
+    let alarmbox = document.getElementById("alarm")
+    alarmbox.textContent = "You have to input a number as a key shift"
+  }
+  else{
+    return true
   }
 }
-}
+
+
 
 
 function encode(string, key){
@@ -63,16 +62,24 @@ bigbox.textcontent = "";
 function encode_button(){
 let bigbox = document.getElementById("output");
 let box = document.getElementById("input")
-let encoded = encode(box.textContent, 1)
-bigbox.textcontent = encoded;
+let evalidated = validate()
+if (evalidated == true){
+let encoded = encode(box.textContent, keyshift.value)
+bigbox.textContent = encoded;
+}
 }
 
 function decode_button(){
 let bigbox = document.getElementById("output");
 let box = document.getElementById("input")
-let decoded = decode(box.textContent, 1)
-bigbox.textcontent = decoded;
+let dvalidated = validate()
+if (dvalidated == true){
+let decoded = decode(box.textContent, keyshift.value)
+bigbox.textContent = decoded;
 }
+}
+
+
 
 function genKeyboard(){
 const alpha = "qwertyuiop*asdfghjkl*zxcvbnm";
