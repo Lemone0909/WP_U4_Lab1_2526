@@ -1,16 +1,17 @@
 let keyshift = document.getElementById("shift")
 
 function validate(){
-  console.log(keyshift)
-  //console.log(typeof(keyshift.value))
-  //if (typeof(keyshift.value) !== number){
-    //let alarmbox = document.getElementById("alarm")
-    //alarmbox.textContent = "You have to input a number as a key shift"
-  //}
-  //else{
-    //return true
-  //}
-}
+    let shift = Number(keyshift.value)
+    if (shift === 0|| shift > 0){
+      return shift
+    }
+    else{
+      alarmbox = document.getElementById("alarm")
+      alarmbox.textContent = "Please enter a number above 0"
+      keyshift.textContent = 0
+    }
+  }
+
 
 
 
@@ -20,18 +21,13 @@ function encode(string, key){
   let user = string.toLowerCase()
   let ceaser = ""
   for(let l=0; l<user.length;l++){
-    try{
       let stringlet = user[l]
-      let letter = alphabet.index(l)
+      let letter = alphabet.indexOf(stringlet)
       let replace = (letter + key) % 26
       let new_letter = alphabet[replace]
       ceaser += new_letter
-    }
-    catch{
-      ceaser += l 
-    }
   }
-  return ceaser
+      return ceaser
 }
 
 function decode(encode_string, key){
@@ -39,17 +35,12 @@ function decode(encode_string, key){
   let user = encode_string.toLowerCase()
   let unceaser = ""
   for(k=0;k<user.length;k++){
-    try{
-      let stringlet = user[l]
-      let letter = alphabet.index(l)
+      let stringlet = user[k]
+      let letter = alphabet.indexOf(stringlet)
       let replace = (letter - key) % 26
       let new_letter = alphabet[replace]
       unceaser += new_letter
     }
-    catch{
-      unceaser += l 
-    }
-  }
   return unceaser
 }
 
@@ -65,20 +56,16 @@ function encode_button(){
 let bigbox = document.getElementById("output");
 let box = document.getElementById("input")
 let evalidated = validate()
-if (evalidated == true){
 let encoded = encode(box.textContent, keyshift.value)
 bigbox.textContent = encoded;
-}
 }
 
 function decode_button(){
 let bigbox = document.getElementById("output");
 let box = document.getElementById("input")
 let dvalidated = validate()
-if (dvalidated == true){
 let decoded = decode(box.textContent, keyshift.value)
 bigbox.textContent = decoded;
-}
 }
 
 
