@@ -8,7 +8,7 @@ function validate(){
     else{
       alarmbox = document.getElementById("alarm")
       alarmbox.textContent = "Please enter a number above 0"
-      keyshift.textContent = 0
+      keyshift.value = '0'
     }
   }
 
@@ -20,14 +20,20 @@ function encode(string, key){
   const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
   let user = string.toLowerCase()
   let ceaser = ""
-  for(let l=0; l<user.length;l++){
-      let stringlet = user[l]
+  for(let l=0; l<user.length;l++){    
+    let stringlet = user[l]
+    if(alphabet.includes(stringlet) === true){
       let letter = alphabet.indexOf(stringlet)
-      let replace = (letter + key) % 26
+      let replace = (letter + Number(key)) % 26
       let new_letter = alphabet[replace]
       ceaser += new_letter
   }
+  else{
+    ceaser += " "
+  }
+}
       return ceaser
+
 }
 
 
@@ -37,20 +43,29 @@ function decode(encode_string, key){
   let unceaser = ""
   for(k=0;k<user.length;k++){
       let stringlet = user[k]
+      if(alphabet.includes(stringlet) === true){
       let letter = alphabet.indexOf(stringlet)
-      let replace = (letter - (key+26)) % 26
+      let replace = (letter - Number(key) + 26) % 26
       let new_letter = alphabet[replace]
       unceaser += new_letter
     }
-  return unceaser
+    else{
+      unceaser += " "
+    }
+  
+  
+  
+    return unceaser
+  }
 }
 
 
-function clear(){
+
+function cleared(){
 let bigbox = document.getElementById("output");
-let box = document.getElementById("input")
+let box = document.getElementById("input");
 box.textContent = "";
-bigbox.textcontent = "";
+bigbox.textContent = "";
 }
 
 function encode_button(){
