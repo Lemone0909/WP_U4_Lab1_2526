@@ -1,13 +1,15 @@
 let keyshift = document.getElementById("shift")
 
 function validate(){
-  if (typeof(keyshift.value) !== number){
-    let alarmbox = document.getElementById("alarm")
-    alarmbox.textContent = "You have to input a number as a key shift"
-  }
-  else{
-    return true
-  }
+  console.log(keyshift)
+  //console.log(typeof(keyshift.value))
+  //if (typeof(keyshift.value) !== number){
+    //let alarmbox = document.getElementById("alarm")
+    //alarmbox.textContent = "You have to input a number as a key shift"
+  //}
+  //else{
+    //return true
+  //}
 }
 
 
