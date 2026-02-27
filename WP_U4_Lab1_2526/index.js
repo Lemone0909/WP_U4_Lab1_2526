@@ -30,6 +30,7 @@ function encode(string, key){
       return ceaser
 }
 
+
 function decode(encode_string, key){
   const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
   let user = encode_string.toLowerCase()
@@ -37,7 +38,7 @@ function decode(encode_string, key){
   for(k=0;k<user.length;k++){
       let stringlet = user[k]
       let letter = alphabet.indexOf(stringlet)
-      let replace = (letter - key) % 26
+      let replace = (letter - (key+26)) % 26
       let new_letter = alphabet[replace]
       unceaser += new_letter
     }
